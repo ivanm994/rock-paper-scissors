@@ -1,3 +1,7 @@
+let w= 0;
+let l = 0;
+let d = 0;
+
 function getComputerChoice()
 {
    let rpsArray = ["rock", "paper", "scissors"];
@@ -16,25 +20,48 @@ function getPlayerChoice()
 
 function playRound (playerSelection, computerSelection)
 {
-   let winner;
    switch (playerSelection + computerSelection)
    {     
       case "rockscissors":
       case "scissorspaper":
       case "paperrock":
-         return winner = "YOU WIN"
+         w++
+         return console.log("YOU WIN") 
          break
       case "scissorsrock":
       case "paperscissors":
       case "rockpaper":
-         return winner = "YOU LOSE"
+         l++
+         return console.log("YOU LOSE")
          break
       case "rockrock":
       case "scissorsscissors":
       case "paperpaper":
-         return winner = "DRAW"
+         d++
+         return console.log("DRAW")
          break
    }
 }
 
-console.log(playRound(getPlayerChoice(), getComputerChoice()));
+function game ()
+{
+   let rounds;
+
+   for (let i = 0; i< 5; i++)
+   {
+      playRound(getPlayerChoice(), getComputerChoice());
+      
+   }
+   if (w>l)
+   {
+      console.log("You win the game!");
+   }
+   else if (l>w)
+   {
+      console.log("COmputer win the game!");
+   }
+   else 
+   console.log("Game is draw!");
+}
+
+console.log(game(), l);
