@@ -1,5 +1,5 @@
-let w= 0;
-let l = 0;
+let playerWin= 0;
+let computerWin = 0;
 
 function getComputerChoice()
 {
@@ -24,13 +24,13 @@ function playRound (playerSelection, computerSelection)
       case "rockscissors":
       case "scissorspaper":
       case "paperrock":
-         w++
+         playerWin++
          return console.log("YOU WIN") 
          break
       case "scissorsrock":
       case "paperscissors":
       case "rockpaper":
-         l++
+         computerWin++
          return console.log("YOU LOSE")
          break
       case "rockrock":
@@ -50,11 +50,11 @@ function game()
       
    }
    
-   if (w>l)
+   if (playerWin>computerWin)
    {
       console.log("You win the game!");
    }
-   else if (l>w)
+   else if (computerWin>playerWin)
    {
       console.log("Computer won the game!");
    }
