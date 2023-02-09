@@ -1,6 +1,5 @@
 let w= 0;
 let l = 0;
-let d = 0;
 
 function getComputerChoice()
 {
@@ -37,31 +36,30 @@ function playRound (playerSelection, computerSelection)
       case "rockrock":
       case "scissorsscissors":
       case "paperpaper":
-         d++
          return console.log("DRAW")
          break
    }
 }
 
-function game ()
+function game()
 {
-   let rounds;
 
    for (let i = 0; i< 5; i++)
    {
       playRound(getPlayerChoice(), getComputerChoice());
       
    }
+   
    if (w>l)
    {
       console.log("You win the game!");
    }
    else if (l>w)
    {
-      console.log("COmputer win the game!");
+      console.log("Computer won the game!");
    }
    else 
    console.log("Game is draw!");
 }
 
-console.log(game(), l);
+console.log(game());
